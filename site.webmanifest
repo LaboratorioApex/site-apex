@@ -1,0 +1,16 @@
+{
+  "name": "Apex Lab | Tecnologia que transforma negócios",
+  "short_name": "Apex Lab",
+  "description": "Criação de sites, e-commerces e soluções digitais para negócios em crescimento.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#070909",
+  "theme_color": "#070909",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+Host: https://laboratorioapex.com.br
+Sitemap: https://laboratorioapex.com.br/sitemap.xml
