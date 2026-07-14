@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
-const repositoryName = "site-apex";
-const basePath = isGitHubPages ? `/${repositoryName}` : "";
+const basePath = "";
 
 const nextConfig = {
   reactStrictMode: true,
