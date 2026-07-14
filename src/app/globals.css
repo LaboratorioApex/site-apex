@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-base: 7 9 9;
+  --color-surface: 13 16 15;
+  --color-surface-2: 22 26 24;
+  --color-border: 43 50 47;
+  --color-foreground: 242 245 243;
+  --color-muted: 157 168 162;
+  --color-accent: 18 151 111;
+  --color-accent-2: 222 178 91;
+  --color-accent-soft: 20 58 47;
+  --color-accent-foreground: 255 255 255;
+  --font-sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    letter-spacing: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-canvas text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background: rgb(var(--color-accent-soft));
+    color: rgb(var(--color-foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card-base {
+    @apply rounded-lg border border-border bg-surface shadow-soft;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center text-xs font-semibold uppercase text-accent;
+  }
+
+  .section-rule {
+    @apply border-y border-border bg-surface;
+  }
+
+  .browser-frame {
+    @apply overflow-hidden rounded-lg border border-border bg-surface shadow-soft;
+  }
+
+  .browser-frame::before {
+    content: "";
+    display: block;
+    height: 2rem;
+    border-bottom: 1px solid rgb(var(--color-border));
+    background:
+      radial-gradient(circle at 1rem 1rem, #e76848 0 3px, transparent 4px),
+      radial-gradient(circle at 1.75rem 1rem, #e1b44f 0 3px, transparent 4px),
+      radial-gradient(circle at 2.5rem 1rem, #4c9c73 0 3px, transparent 4px),
+      rgb(var(--color-surface-2));
+  }
+
+  .hero-project-card {
+    animation: hero-float 6s ease-in-out infinite;
+    transform: translateZ(0);
+  }
+
+  .hero-project-card:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .hero-project-card:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    z-index: 120;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    html.has-custom-cursor,
+    html.has-custom-cursor a,
+    html.has-custom-cursor button,
+    html.has-custom-cursor summary {
+      cursor: none;
+    }
+
+    .cursor-dot,
+    .cursor-ring {
+      display: block;
+    }
+
+    .cursor-dot {
+      background: rgb(var(--color-accent));
+      border-radius: 999px;
+      height: 7px;
+      margin: -3.5px 0 0 -3.5px;
+      width: 7px;
+    }
+
+    .cursor-ring {
+      border: 1px solid rgb(var(--color-accent) / 0.75);
+      border-radius: 999px;
+      height: 34px;
+      margin: -17px 0 0 -17px;
+      transition: height 180ms ease, margin 180ms ease, opacity 180ms ease, width 180ms ease;
+      width: 34px;
+    }
+
+    .cursor-ring.is-hovering {
+      background: rgb(var(--color-accent) / 0.12);
+      height: 54px;
+      margin: -27px 0 0 -27px;
+      width: 54px;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    color: rgb(var(--color-accent));
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
