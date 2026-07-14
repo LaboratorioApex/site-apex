@@ -50,7 +50,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", color: "#9da8a2", fontSize: "22px" }}>
           <span>Criação de sites · E-commerce · SEO</span>
-          <span>laboratorioapex.com.br</span>
+          <span>laboratorioapex.com</span>
         </div>
       </div>
     ),

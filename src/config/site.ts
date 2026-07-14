@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: "Tecnologia que transforma negócios.",
   description:
     "A Apex Lab cria sites profissionais e e-commerces rápidos, estratégicos e preparados para transformar presença digital em oportunidades de negócio.",
-  url: "https://laboratorioapex.com.br",
+  url: "https://laboratorioapex.com",
   locale: "pt_BR",
   contact: {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "laboratorioapexsuporte@gmail.com",

@@ -64,10 +64,10 @@ compartilhamento, dados estruturados de organização, FAQ e estudos de caso.
 
 No lançamento:
 
-1. Configure o domínio `laboratorioapex.com.br` na hospedagem.
+1. Configure o domínio `laboratorioapex.com` na hospedagem.
 2. Preencha os contatos em `.env.local` ou no painel da hospedagem.
 3. Cadastre o domínio no Google Search Console.
-4. Envie `https://laboratorioapex.com.br/sitemap.xml`.
+4. Envie `https://laboratorioapex.com/sitemap.xml`.
 5. Configure `NEXT_PUBLIC_GA_ID` quando a propriedade do Analytics existir.
 6. Atualize CNPJ e dados empresariais assim que estiverem disponíveis.
 
